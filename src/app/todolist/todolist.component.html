@@ -1,6 +1,8 @@
 <div class="card">
+  <form (submit)="onAddTodoItem($event)" action="">
+    <input #inputElement type="text">
+  </form>
   <div *ngFor="let todoItem of todos" class="list">
-    <input type="text">
     <app-todoitem [todoItem]="todoItem"></app-todoitem>
   </div>
 </div>
