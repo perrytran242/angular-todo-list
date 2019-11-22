@@ -15,4 +15,12 @@ export class TodoService {
   getTodoItems() {
     return this.todoItems;
   }
+
+  addTodoItem(todo, complete) {
+    this.todoItems.push({
+      id: this.todoItems.length,
+      todo,
+      complete
+    });
+  }
 }

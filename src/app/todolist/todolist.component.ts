@@ -9,6 +9,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class TodolistComponent implements OnInit {
   @ViewChild('inputElement') inputElement: ElementRef;
   todos: any;
+  todoItemToAdd: any;
 
 
   constructor(
@@ -22,6 +23,11 @@ export class TodolistComponent implements OnInit {
 
   onAddTodoItem(e) {
     e.preventDefault();
-    console.log(this.inputElement.nativeElement.value);
+    this.todoItemToAdd = this.inputElement.nativeElement.value;
+
+    this.inputElement.nativeElement.value = '';
+
+    this.todoService.addTodoItem(this.todoItemToAdd, false);
+
   }
 }
