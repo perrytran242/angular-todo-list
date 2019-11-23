@@ -28,5 +28,7 @@ export class TodoService {
     const { id, complete } = todo;
     const index = this.todoItems.findIndex(item => todo.id === id);
     this.todoItems[index].complete = complete;
+
+    console.log(this.todoItems);
   }
 }

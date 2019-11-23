@@ -28,8 +28,6 @@ export class TodolistComponent implements OnInit {
   }
 
   onReceievedCompletedTodo(e) {
-    // console.log(e);
-
     this.todoService.completeTodoItem(e);
 
   }
