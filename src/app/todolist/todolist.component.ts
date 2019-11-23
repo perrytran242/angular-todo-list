@@ -10,7 +10,7 @@ export class TodolistComponent implements OnInit {
   @ViewChild('inputElement') inputElement: ElementRef;
   todos: any;
   todoItemToAdd: any;
-
+  newTodoItem = '';
 
   constructor(
     private todoService: TodoService,
@@ -18,16 +18,17 @@ export class TodolistComponent implements OnInit {
 
   ngOnInit() {
     this.todos = this.todoService.getTodoItems();
-    console.log(this.todos);
   }
 
   onAddTodoItem(e) {
     e.preventDefault();
     this.todoItemToAdd = this.inputElement.nativeElement.value;
 
-    this.inputElement.nativeElement.value = '';
+    console.log(this.newTodoItem);
 
-    this.todoService.addTodoItem(this.todoItemToAdd, false);
+    // this.inputElement.nativeElement.value = '';
+
+    this.todoService.addTodoItem(this.newTodoItem, false);
 
   }
 }

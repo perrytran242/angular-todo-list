@@ -1,6 +1,7 @@
 <div class="card">
-  <form (submit)="onAddTodoItem($event)" action="">
-    <input #inputElement type="text">
+  <form (submit)="onAddTodoItem($event)">
+    <input [(ngModel)]="newTodoItem" name="newTodoItem" #inputElement type="text">
+    <p>{{ newTodoItem }}</p>
   </form>
   <div *ngFor="let todoItem of todos" class="list">
     <app-todoitem [todoItem]="todoItem"></app-todoitem>
