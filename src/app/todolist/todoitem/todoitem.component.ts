@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-todoitem',
@@ -7,10 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TodoitemComponent implements OnInit {
   @Input() todoItem: any;
+  @Output() completedTodoItem = new EventEmitter();
+  completeTodoItem = false;
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.todoItem.todo);
   }
 
+  onCompleteTodoItem(todo) {
+    this.completeTodoItem = !this.completeTodoItem;
+    todo.complete = this.completeTodoItem;
+
+    this.completedTodoItem.emit(todo);
+  }
 }

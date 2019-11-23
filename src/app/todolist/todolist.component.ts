@@ -23,12 +23,14 @@ export class TodolistComponent implements OnInit {
   onAddTodoItem(e) {
     e.preventDefault();
     this.todoItemToAdd = this.inputElement.nativeElement.value;
-
-    console.log(this.newTodoItem);
-
-    // this.inputElement.nativeElement.value = '';
-
     this.todoService.addTodoItem(this.newTodoItem, false);
+    this.newTodoItem = '';
+  }
+
+  onReceievedCompletedTodo(e) {
+    // console.log(e);
+
+    this.todoService.completeTodoItem(e);
 
   }
 }

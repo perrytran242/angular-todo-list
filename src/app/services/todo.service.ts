@@ -23,4 +23,10 @@ export class TodoService {
       complete
     });
   }
+
+  completeTodoItem(todo) {
+    const { id, complete } = todo;
+    const index = this.todoItems.findIndex(item => todo.id === id);
+    this.todoItems[index].complete = complete;
+  }
 }
