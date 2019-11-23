@@ -24,11 +24,16 @@ export class TodoService {
     });
   }
 
+  getCompletedTodoItems() {
+    console.log('completed todo items:', this.todoItems);
+    return this.todoItems.filter(todo => todo.complete === true);
+  }
+
   completeTodoItem(todo) {
     const { id, complete } = todo;
-    const index = this.todoItems.findIndex(item => todo.id === id);
+    const index = this.todoItems.findIndex(item => item.id === id);
+    console.log(index);
     this.todoItems[index].complete = complete;
-
     console.log(this.todoItems);
   }
 }

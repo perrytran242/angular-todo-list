@@ -18,6 +18,7 @@ export class TodolistComponent implements OnInit {
 
   ngOnInit() {
     this.todos = this.todoService.getTodoItems();
+    console.log('on init:', this.todos);
   }
 
   onAddTodoItem(e) {
@@ -29,6 +30,18 @@ export class TodolistComponent implements OnInit {
 
   onReceievedCompletedTodo(e) {
     this.todoService.completeTodoItem(e);
-
   }
+
+  onDisplayAllTodos() {
+    this.todos = this.todoService.getTodoItems();
+    console.log('display all todos:', this.todos);
+  }
+  onDisplayActiveTodos() {
+  }
+
+  onDisplayCompletedTodos() {
+    this.todos = this.todoService.getCompletedTodoItems();
+    console.log(this.todos);
+  }
+
 }
