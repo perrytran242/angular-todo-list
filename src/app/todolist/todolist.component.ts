@@ -18,7 +18,6 @@ export class TodolistComponent implements OnInit {
 
   ngOnInit() {
     this.todos = this.todoService.getTodoItems();
-    console.log('on init:', this.todos);
   }
 
   onAddTodoItem(e) {
@@ -44,4 +43,10 @@ export class TodolistComponent implements OnInit {
     this.todos = this.todoService.getCompletedTodoItems();
   }
 
+  onReceievedDeletedTodo(e) {
+    const deleteTodo = e;
+    console.log('delete todo item:', deleteTodo);
+    this.todos = this.todoService.deleteTodo(deleteTodo);
+    // console.log(this.todos);
+  }
 }

@@ -34,8 +34,15 @@ export class TodoService {
 
   completeTodoItem(todo) {
     const { id, complete } = todo;
-    const index = this.todoItems.findIndex(element => element .id === id);
+    const index = this.todoItems.findIndex(element => element.id === id);
     this.todoItems[index].complete = complete;
   }
 
+  deleteTodo(todo) {
+    const { id } = todo;
+    const index = this.todoItems.findIndex(element => element.id === id);
+    this.todoItems.splice(index, 1);
+    return this.todoItems;
+
+  }
 }

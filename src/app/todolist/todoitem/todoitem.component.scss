@@ -1,3 +1,20 @@
-.strike_through {
-  text-decoration: line-through;
+
+.todo_item {
+  position: relative;
+
+  p {
+    display: inline-block;
+    width: 300px;
+  }
+
+  .strike_through {
+    text-decoration: line-through;
+  }
+
+  .trash_icon {
+    position: absolute;
+    right: 0;
+  }
 }
+
+

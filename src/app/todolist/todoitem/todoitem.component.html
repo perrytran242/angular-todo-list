@@ -1,3 +1,7 @@
-<p
-  (click)="onCompleteTodoItem(todoItem)"
-  [class.strike_through]="todoItem.complete">{{ todoItem.todo }}</p>
+<div class="todo_item">
+  <p
+    (click)="onCompleteTodoItem(todoItem)"
+    [class.strike_through]="todoItem.complete">{{ todoItem.todo }}
+  </p>
+  <span (click)="onDeleteTodo(todoItem)" class="trash_icon"><i class="fa fa-trash"></i></span>
+</div>
