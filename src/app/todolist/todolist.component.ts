@@ -34,14 +34,14 @@ export class TodolistComponent implements OnInit {
 
   onDisplayAllTodos() {
     this.todos = this.todoService.getTodoItems();
-    console.log('display all todos:', this.todos);
   }
+
   onDisplayActiveTodos() {
+    this.todos = this.todoService.getActiveTodos();
   }
 
   onDisplayCompletedTodos() {
     this.todos = this.todoService.getCompletedTodoItems();
-    console.log(this.todos);
   }
 
 }

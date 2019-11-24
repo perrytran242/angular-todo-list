@@ -25,15 +25,17 @@ export class TodoService {
   }
 
   getCompletedTodoItems() {
-    console.log('completed todo items:', this.todoItems);
     return this.todoItems.filter(todo => todo.complete === true);
+  }
+
+  getActiveTodos() {
+    return this.todoItems.filter(todo => todo.complete === false);
   }
 
   completeTodoItem(todo) {
     const { id, complete } = todo;
-    const index = this.todoItems.findIndex(item => item.id === id);
-    console.log(index);
+    const index = this.todoItems.findIndex(element => element .id === id);
     this.todoItems[index].complete = complete;
-    console.log(this.todoItems);
   }
+
 }

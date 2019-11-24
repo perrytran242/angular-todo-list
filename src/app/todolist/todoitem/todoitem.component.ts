@@ -17,6 +17,7 @@ export class TodoitemComponent implements OnInit {
   }
 
   onCompleteTodoItem(todo) {
+
     this.completeTodoItem = !this.completeTodoItem;
     todo.complete = this.completeTodoItem;
 
