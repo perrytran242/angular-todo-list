@@ -24,6 +24,12 @@ export class TodoService {
     });
   }
 
+  findIndexOfTodoItem(todo) {
+    const { id } = todo;
+    const index = this.todoItems.findIndex(element => element.id === id);
+    return index;
+  }
+
   getCompletedTodoItems() {
     return this.todoItems.filter(todo => todo.complete === true);
   }
@@ -33,14 +39,12 @@ export class TodoService {
   }
 
   completeTodoItem(todo) {
-    const { id, complete } = todo;
-    const index = this.todoItems.findIndex(element => element.id === id);
-    this.todoItems[index].complete = complete;
+    const index = this.findIndexOfTodoItem(todo);
+    this.todoItems[index].complete = todo.complete;
   }
 
   deleteTodo(todo) {
-    const { id } = todo;
-    const index = this.todoItems.findIndex(element => element.id === id);
+    const index = this.findIndexOfTodoItem(todo);
     this.todoItems.splice(index, 1);
     return this.todoItems;
 

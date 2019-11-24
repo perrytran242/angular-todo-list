@@ -11,6 +11,7 @@ export class TodolistComponent implements OnInit {
   todos: any;
   todoItemToAdd: any;
   newTodoItem = '';
+  activeTab = false;
 
   constructor(
     private todoService: TodoService,
@@ -25,6 +26,10 @@ export class TodolistComponent implements OnInit {
     this.todoItemToAdd = this.inputElement.nativeElement.value;
     this.todoService.addTodoItem(this.newTodoItem, false);
     this.newTodoItem = '';
+
+    if ( this.activeTab) {
+      this.todos = this.todoService.getActiveTodos();
+    }
   }
 
   onReceievedCompletedTodo(e) {
@@ -36,17 +41,17 @@ export class TodolistComponent implements OnInit {
   }
 
   onDisplayActiveTodos() {
+    this.activeTab = true;
     this.todos = this.todoService.getActiveTodos();
   }
 
   onDisplayCompletedTodos() {
+    this.activeTab = false;
     this.todos = this.todoService.getCompletedTodoItems();
   }
 
   onReceievedDeletedTodo(e) {
     const deleteTodo = e;
-    console.log('delete todo item:', deleteTodo);
     this.todos = this.todoService.deleteTodo(deleteTodo);
-    // console.log(this.todos);
   }
 }
