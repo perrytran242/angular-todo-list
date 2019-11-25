@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TodoitemComponent } from './todolist/todoitem/todoitem.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { TodoinformationComponent } from './todolist/todoinformation/todoinformation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodolistComponent,
-    TodoitemComponent
+    TodoitemComponent,
+    TodoinformationComponent
   ],
   imports: [
     AppRoutingModule,
