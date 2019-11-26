@@ -3,5 +3,6 @@
     (click)="onCompleteTodoItem(todoItem)"
     [class.strike_through]="todoItem.complete">{{ todoItem.todo }}
   </p>
+  <p (click)="navigateToTodoInfo()">View</p>
   <span (click)="onDeleteTodo(todoItem)" class="trash_icon"><i class="fa fa-trash"></i></span>
 </div>

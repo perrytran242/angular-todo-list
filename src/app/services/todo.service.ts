@@ -8,6 +8,7 @@ export class TodoService {
     {id: 1, todo: 'walk the dog', complete: false},
     {id: 2, todo: 'go to gym', complete: false},
     {id: 3, todo: 'go to doctor', complete: false},
+    {id: 4, todo: 'call phone number', complete: false},
   ];
 
   constructor() { }

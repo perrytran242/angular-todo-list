@@ -25,7 +25,7 @@ export class TodoinformationComponent implements OnInit {
     this.todoList = this.todoService.getTodoItems();
 
     this.route.params.subscribe( param => {
-      this.todoId = parseInt(param.id);
+      this.todoId = parseInt(param.id, null);
 
 
       this.todoIndex = this.todoList.findIndex(todoItem => {
@@ -34,8 +34,6 @@ export class TodoinformationComponent implements OnInit {
 
       this.todoItem = this.todoList[this.todoIndex];
     });
-
-    console.log(this.todoItem);
   }
 
 }
