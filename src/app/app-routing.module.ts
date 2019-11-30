@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { TodoinformationComponent } from './todolist/todoinformation/todoinformation.component';
 import { TodolistComponent } from './todolist/todolist.component';
 
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  { path: 'todo-list', component: TodolistComponent }
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/heros', pathMatch: 'full' },
+  { path: 'todo-list', component: TodolistComponent },
+  { path: 'todo-list/:id', component: TodoinformationComponent },
+  { path: '**', component: TodolistComponent},
 ];
-
-
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes)
+    CommonModule,
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]
 })

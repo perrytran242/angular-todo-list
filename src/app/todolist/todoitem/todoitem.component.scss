@@ -2,6 +2,10 @@
 .todo_item {
   position: relative;
 
+  input[type='checkbox'] {
+    margin-right: 5px;
+  }
+
   p {
     display: inline-block;
     width: 300px;
@@ -11,10 +15,16 @@
     text-decoration: line-through;
   }
 
+  .view_todo {
+    cursor: pointer;
+  }
+
   .trash_icon {
     position: absolute;
     right: 0;
   }
+
+
 }
 
 

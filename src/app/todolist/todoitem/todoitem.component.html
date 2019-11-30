@@ -1,7 +1,10 @@
 <div class="todo_item">
+  <label for="checkbox"></label>
+  <input (change)="onCompleteTodoItem(todoItem)" [(ngModel)]="completed" id="checkbox" type="checkbox">
   <p
     (click)="onCompleteTodoItem(todoItem)"
     [class.strike_through]="todoItem.complete">{{ todoItem.todo }}
   </p>
+  <p class="view_todo" (click)="navigateToTodoInfo()">View</p>
   <span (click)="onDeleteTodo(todoItem)" class="trash_icon"><i class="fa fa-trash"></i></span>
 </div>
