@@ -21,14 +21,10 @@ export class TodoitemComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    // console.log(this.todoItem);
-  }
-
-  ngOnChanges(changes) {
 
   }
 
-
+  ngOnChanges(changes) { }
 
   onCompleteTodoItem(todo) {
     this.completeTodoItem = !this.completeTodoItem;

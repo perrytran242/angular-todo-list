@@ -1,6 +1,6 @@
 <div class="todo_item">
   <label for="checkbox"></label>
-  <input (change)="onCompleteTodoItem(todoItem)" [(ngModel)]="completed" id="checkbox" type="checkbox">
+  <input (change)="onCompleteTodoItem(todoItem)" [checked]="todoItem.complete" id="checkbox" type="checkbox">
   <p
     (click)="onCompleteTodoItem(todoItem)"
     [class.strike_through]="todoItem.complete">{{ todoItem.todo }}
