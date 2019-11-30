@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TodoitemComponent } from './todolist/todoitem/todoitem.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
