@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/heros', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'todo-list', component: TodolistComponent },
   { path: 'todo-list/:id', component: TodoinformationComponent },
   { path: '**', component: TodolistComponent},

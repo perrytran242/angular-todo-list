@@ -8,6 +8,8 @@ import { TodoitemComponent } from './todolist/todoitem/todoitem.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TodoinformationComponent } from './todolist/todoinformation/todoinformation.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AngularFontAwesomeModule,
     ModalModule.forRoot()
   ],

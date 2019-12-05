@@ -1,5 +1,8 @@
 import { TodoService } from './../services/todo.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'app-todolist',
@@ -12,13 +15,26 @@ export class TodolistComponent implements OnInit {
   todoItemToAdd: any;
   newTodoItem = '';
   activeTab = false;
+  localTodoItems;
 
   constructor(
     private todoService: TodoService,
   ) { }
 
   ngOnInit() {
-    this.todos = this.todoService.getTodoItems();
+    // this.todos = this.todoService.getTodoItems();
+
+    // this.todoService.getLocalTodoItems().subscribe( res => {
+    //   this.todos = res;
+
+    //   console.log('local todo items:', this.localTodoItems);
+    // });
+
+    const todos = this.todoService.getLocalTodoItems().pipe(map( data => {
+      return data;
+    }));
+
+    todos.subscribe(data => this.todos = data);
   }
 
   onAddTodoItem(e) {

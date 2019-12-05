@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
+  configUrl = '/api/todo-list';
+
   todoItems = [
     {id: 1, todo: 'walk the dog', complete: false},
     {id: 2, todo: 'go to gym', complete: false},
@@ -11,7 +15,9 @@ export class TodoService {
     {id: 4, todo: 'call phone number', complete: false},
   ];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getTodoItems() {
     return this.todoItems;
@@ -23,6 +29,11 @@ export class TodoService {
       todo,
       complete
     });
+  }
+
+  getLocalTodoItems() {
+    // console.log(this.configUrl);
+    return this.http.get(this.configUrl);
   }
 
   findIndexOfTodoItem(todo) {
